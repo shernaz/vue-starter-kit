@@ -1,0 +1,69 @@
+{
+  "name": "vue-ts-starter",
+  "version": "1.0.0",
+  "description": "Vue Typescript Starter",
+  "main": "src/main.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "analyze": "yarn poi build --generate-stats stats.json && yarn webpack-bundle-analyzer stats.json",
+    "build": "yarn poi build",
+    "e2e": "yarn testcafe all test/e2e",
+    "headless": "yarn testcafe chrome:headless test/e2e",
+    "lint": "yarn tslint --fix -c tslint.json 'src/**/*.ts'",
+    "precommit": "yarn test && yarn lint",
+    "reset": "yarn rimraf dist node_modules stats.json && yarn",
+    "setup": "yarn && yarn rimraf .git && git init",
+    "start": "yarn poi",
+    "test": "yarn jest"
+  },
+  "author": "Charif Mews",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^21.1.5",
+    "@types/node": "^8.0.47",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "poi": "^9.4.4",
+    "poi-preset-typescript": "^9.0.2",
+    "rimraf": "^2.6.2",
+    "testcafe": "^0.18.2",
+    "ts-jest": "^21.1.4",
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3",
+    "vue-jest": "^1.0.2",
+    "vue-test-utils": "^1.0.0-beta.4",
+    "webpack-bundle-analyzer": "^2.9.0"
+  },
+  "dependencies": {
+    "apisauce": "^0.14.1",
+    "axios": "^0.17.0",
+    "normalize.css": "^7.0.0",
+    "vue": "^2.5.2",
+    "vue-class-component": "^6.0.0",
+    "vue-i18n": "^7.3.2",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.0",
+    "vuex-class": "^0.3.0"
+  },
+  "jest": {
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"      
+    },
+    "moduleFileExtensions": [
+      "json",
+      "ts",
+      "js",
+      "vue"
+    ],
+    "testRegex": "/test/unit/.*\\.(ts|js)$",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/.*\\.(ts|js)$",
+      "/.*\\.vue$"
+    ]
+  }
+}
