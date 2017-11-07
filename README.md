@@ -16,7 +16,7 @@
 
 Make sure you have [NodeJS](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com) installed and run the following snippet: 
 
-```sh
+```bash
 git clone https://github.com/gingerpayments/vue-ts-starter
 cd vue-ts-starter
 yarn setup
